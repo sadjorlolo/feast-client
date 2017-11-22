@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiOrigin: 'https://secure-hamlet-26595.herokuapp.com/'
 };
