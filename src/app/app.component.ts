@@ -7,6 +7,6 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Feast Application';
   apiOrigin = environment.apiOrigin;
 }
