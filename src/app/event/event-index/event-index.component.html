@@ -1,0 +1,15 @@
+<div>
+
+  <h3>View Your Events</h3>
+  <h2>Event Name</h2>
+  <h2>Event Location</h2>
+  <h2>Event Date</h2>
+  <h2>Event Time</h2>
+  <h3>Event Description</h3>
+
+  <div *ngFor="let event of allEvents">
+    <ul>
+      <li>{{event.id}}</li>
+    </ul>
+  </div>
+</div>
