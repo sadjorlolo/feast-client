@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventComponent } from './event/event.component';
 // import { EventIndexComponent } from './event/event-index/event-index.component';
 // import { EventShowComponent } from './event/event-show/event-show.component';
-import { EventNewComponent } from './event/event-new/event-new.component';
+// import { EventNewComponent } from './event/event-new/event-new.component';
 
 
 const routes: Routes = []

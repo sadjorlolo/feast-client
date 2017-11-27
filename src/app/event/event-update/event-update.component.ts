@@ -21,17 +21,17 @@ export class EventUpdateComponent implements OnInit {
     this.route.params.forEach(param => {
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
-        console.log('updatedEvent response.json', response.json())
+        // console.log('updatedEvent response.json', response.json())
         this.updatedEvent = response.json().event
       })
     })
   }
 
   updateEvent(updatedEvent) {
-    console.log('updating event')
+    // console.log('updating event')
     this.eventService.updateEvent(updatedEvent)
       .subscribe(response => {
-        console.log('updateEvent response', response.json())
+        // console.log('updateEvent response', response.json())
         let event = response.json().event
         this.router.navigate(["/events/" + event.id])
 

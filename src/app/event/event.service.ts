@@ -7,17 +7,17 @@ import { AuthService } from '../services/auth/auth.service'
 export class EventService {
 
   getAllEvents() {
-    console.log('get all events?')
+    // console.log('get all events?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
-    console.log('config is', config)
+    // console.log('config is', config)
 
     return this.http.get(`${environment.apiOrigin}/events`, config);
     // return this.http.get('http://localhost:4741/events', config);
   }
 
   getOneEvent(eventId) {
-    console.log('get one event?')
+    // console.log('get one event?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
     return this.http.get(`${environment.apiOrigin}/events/${eventId}`, config)
@@ -25,7 +25,7 @@ export class EventService {
   }
 
   saveEvent(newEvent) {
-    console.log('will this event save?')
+    // console.log('will this event save?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
     let event = {
@@ -37,12 +37,12 @@ export class EventService {
         "description": newEvent.description
       }
     }
-    console.log('event is', event)
+    // console.log('event is', event)
     return this.http.post(`${environment.apiOrigin}/events`, event, config);
   }
 
   updateEvent(updatedEvent) {
-    console.log('updatedEvent run?')
+    // console.log('updatedEvent run?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
     let eventUpdate = {
@@ -58,7 +58,7 @@ export class EventService {
   }
 
   deleteEvent(event) {
-    console.log('delete evet is', event)
+    // console.log('delete evet is', event)
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
     return this.http.delete(`${environment.apiOrigin}/events/${event.id}`, config);

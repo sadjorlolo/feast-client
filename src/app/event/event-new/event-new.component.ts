@@ -19,11 +19,11 @@ export class EventNewComponent implements OnInit {
     newEvent = <any>{};
 
     saveEvent(newEvent) {
-      console.log('saving event')
-      console.log('newEvent is', newEvent)
+      // console.log('saving event')
+      // console.log('newEvent is', newEvent)
       this.eventService.saveEvent(newEvent)
         .subscribe(response => {
-          console.log('newEvent response is', response.json())
+          // console.log('newEvent response is', response.json())
           let event = response.json()
 
         })

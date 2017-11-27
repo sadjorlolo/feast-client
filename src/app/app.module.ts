@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { EventComponent } from './event/event.component';
-import { EventIndexComponent } from './event/event-index/event-index.component';
+// import { EventComponent } from './event/event.component';
+import { EventModule } from './event/event.module';
+// import { EventIndexComponent } from './event/event-index/event-index.component';
 import { EventService } from './event/event.service';
-import { EventShowComponent } from './event/event-show/event-show.component';
-import { EventNewComponent } from './event/event-new/event-new.component';
-import { EventUpdateComponent } from './event/event-update/event-update.component';
+// import { EventShowComponent } from './event/event-show/event-show.component';
+// import { EventNewComponent } from './event/event-new/event-new.component';
+// import { EventUpdateComponent } from './event/event-update/event-update.component';
 
 
 @NgModule({
@@ -24,18 +25,18 @@ import { EventUpdateComponent } from './event/event-update/event-update.componen
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    EventComponent,
-    EventIndexComponent,
-    EventShowComponent,
-    EventNewComponent,
-    EventUpdateComponent
+    // EventComponent,
+    // EventIndexComponent,
+    // EventShowComponent,
+    // EventNewComponent,
+    // EventUpdateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    // EventModule,
+    EventModule,
     EventRoutingModule,
   ],
   providers: [AuthService, EventService],
