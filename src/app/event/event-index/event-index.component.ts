@@ -11,7 +11,7 @@ export class EventIndexComponent implements OnInit {
 
   allEvents = [];
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private auth: AuthService) { }
 
   ngOnInit() {
     // console.log('does this work?')

@@ -1,15 +1,13 @@
-<div>
-
-  <h3>View Your Events</h3>
-  <h2>Event Name</h2>
-  <h2>Event Location</h2>
-  <h2>Event Date</h2>
-  <h2>Event Time</h2>
-  <h3>Event Description</h3>
-
+<div *ngIf="auth.user">
   <div *ngFor="let event of allEvents">
     <ul>
-      <li>{{event.id}}</li>
+      <li>Event Name : {{event.name}}</li>
+      <li>Event Date : {{event.date}}</li>
+      <li>Event Time: {{event.time}}</li>
+      <li>Event Location: {{event.location}}</li>
+      <li>Event Description: {{event.description}}</li>
+      <li>Hosted By: {{event.event_creator.email}}</li>
     </ul>
+    <hr>
   </div>
 </div>

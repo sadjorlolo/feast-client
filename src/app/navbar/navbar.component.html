@@ -1,7 +1,7 @@
-<nav class="navbar navbar-inverse">
+<nav *ngIf='this.auth.user' class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar=header">
-      <a class="navbar-brand" href="#">Feast - Website Name</a>
+      <a class="navbar-brand" routerLink="/">Feast - Website Name</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a routerLink="/index">Page 1</a></li>
