@@ -1,5 +1,4 @@
 
-  <div *ngIf="auth.user">
     <div *ngIf='oneEvent'>
       <ul>
         <li>Id: {{oneEvent.id}}</li>
@@ -12,7 +11,7 @@
     </ul>
     <hr>
   </div>
-</div>
-<!-- <p>
-  show event works
-</p> -->
+
+  <div *ngIf='!oneEvent'>
+    Whoops, look like that event doesn't exist.
+  </div>

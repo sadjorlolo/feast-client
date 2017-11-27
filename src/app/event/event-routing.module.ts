@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventComponent } from './event.component';
 import { EventIndexComponent } from './event-index/event-index.component';
 import { EventShowComponent } from './event-show/event-show.component';
-
+import { EventNewComponent } from './event-new/event-new.component';
 
 const eventRoutes: Routes = [
   {
@@ -17,9 +17,14 @@ const eventRoutes: Routes = [
         component: EventIndexComponent
       },
       {
+        path: 'new',
+        component: EventNewComponent
+      },
+      {
       path: ':id',
       component: EventShowComponent
-    }
+    },
+
     ]
   }
 ]

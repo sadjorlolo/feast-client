@@ -12,17 +12,36 @@ export class EventService {
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
     console.log('config is', config)
 
-    return this.http.get('http://localhost:4741/events', config);
+    return this.http.get(`${environment.apiOrigin}/events`, config);
+    // return this.http.get('http://localhost:4741/events', config);
   }
 
   getOneEvent(eventId) {
     console.log('get one event?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
-    return this.http.get(`http://localhost:4741/events/${eventId}`, config)
+    return this.http.get(`${environment.apiOrigin}/events/${eventId}`, config)
     // console.log('getOne config is', config)
   }
 
-  constructor(private http: Http, private auth: AuthService) { }
+  saveEvent(newEvent) {
+    console.log('will this event save?')
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    let event = {
+      "event": {
+        "name": newEvent.name,
+        "date": newEvent.date,
+        "time": newEvent.time,
+        "location": newEvent.location,
+        "description": newEvent.description
+      }
+    }
+    console.log('event is', event)
+    return this.http.post(`${environment.apiOrigin}/events`, event, config);
+  }
+
+  constructor(private http: Http,
+              private auth: AuthService) { }
 
 }

@@ -9,13 +9,14 @@ import { EventIndexComponent } from './event-index/event-index.component';
 import { EventShowComponent } from './event-show/event-show.component';
 // import { EventRoutingModule } from './event-routing.module';
 import { EventService } from './event.service';
-
+import { EventNewComponent } from './event-new/event-new.component';
 
 @NgModule({
   declarations: [
     EventComponent,
     EventIndexComponent,
-    EventShowComponent
+    EventShowComponent,
+    EventNewComponent
   ],
   imports: [
     BrowserModule,

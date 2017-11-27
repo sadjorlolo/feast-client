@@ -1,0 +1,11 @@
+
+<div class='new-event'>
+
+  <input [(ngModel)]="newEvent.name" type="text" placeholder="Event Name" />
+  <input [(ngModel)]="newEvent.date" type="text" placeholder="Event Date" />
+  <input [(ngModel)]="newEvent.time" type="text" placeholder="Event Time" />
+  <input [(ngModel)]="newEvent.location" type="text" placeholder="Event Location" />
+  <input [(ngModel)]="newEvent.description" type="text" placeholder="Event Description" />
+
+  <input (click)="saveEvent(newEvent)" type="submit" value="Create Event!" />
+</div>

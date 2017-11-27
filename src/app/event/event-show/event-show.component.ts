@@ -24,8 +24,6 @@ export class EventShowComponent implements OnInit {
       console.log('param id is', param.id)
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
-        // console.log('show', response.json().event)
-        // console.log(response.json())
         this.oneEvent = response.json().event
       })
     })
