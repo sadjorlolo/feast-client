@@ -9,6 +9,11 @@
         <li>Event Description: {{oneEvent.description}}</li>
         <li>Hosted By: {{oneEvent.event_creator.email}}</li>
         <li><a routerLink="/events/edit/{{oneEvent.id}}">Edit</a></li>
+        <li>
+          <form (ngSubmit)="deleteEvent(oneEvent)">
+          <input type="submit" value="Delete"/>
+        </form>
+        </li>
     </ul>
     <hr>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,8 +17,17 @@ export class EventShowComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private eventService: EventService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
+
+  deleteEvent(event) {
+    console.log('show ts event is', event)
+    this.eventService.deleteEvent(event)
+      .subscribe(response => {
+        this.router.navigate(["/events"]);
+      })
+  }
 
   ngOnInit() {
     this.route.params.forEach(param => {

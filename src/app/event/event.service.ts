@@ -55,7 +55,13 @@ export class EventService {
       }
     }
     return this.http.put(`${environment.apiOrigin}/events/${updatedEvent.id}`, eventUpdate, config);
+  }
 
+  deleteEvent(event) {
+    console.log('delete evet is', event)
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    return this.http.delete(`${environment.apiOrigin}/events/${event.id}`, config);
   }
 
   constructor(private http: Http,
