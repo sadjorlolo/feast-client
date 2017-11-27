@@ -1,11 +1,13 @@
 
 <div class='new-event'>
 
-  <input [(ngModel)]="newEvent.name" type="text" placeholder="Event Name" />
-  <input [(ngModel)]="newEvent.date" type="text" placeholder="Event Date" />
-  <input [(ngModel)]="newEvent.time" type="text" placeholder="Event Time" />
-  <input [(ngModel)]="newEvent.location" type="text" placeholder="Event Location" />
-  <input [(ngModel)]="newEvent.description" type="text" placeholder="Event Description" />
+  <form (ngSubmit)="saveEvent(newEvent)">
+    <input name="name" [(ngModel)]="newEvent.name" type="text" placeholder="Event Name" />
+    <input name="date" [(ngModel)]="newEvent.date" type="text" placeholder="Event Date" />
+    <input name="time" [(ngModel)]="newEvent.time" type="text" placeholder="Event Time" />
+    <input name="location" [(ngModel)]="newEvent.location" type="text" placeholder="Event Location" />
+    <input name="description" [(ngModel)]="newEvent.description" type="text" placeholder="Event Description" />
 
-  <input (click)="saveEvent(newEvent)" type="submit" value="Create Event!" />
+    <input type="submit" value="Create Event!" />
+  </form>
 </div>

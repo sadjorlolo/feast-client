@@ -41,6 +41,23 @@ export class EventService {
     return this.http.post(`${environment.apiOrigin}/events`, event, config);
   }
 
+  updateEvent(updatedEvent) {
+    console.log('updatedEvent run?')
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    let eventUpdate = {
+      "event": {
+        "name": updatedEvent.name,
+        "date": updatedEvent.date,
+        "time": updatedEvent.time,
+        "location": updatedEvent.location,
+        "description": updatedEvent.description
+      }
+    }
+    return this.http.put(`${environment.apiOrigin}/events/${updatedEvent.id}`, eventUpdate, config);
+
+  }
+
   constructor(private http: Http,
               private auth: AuthService) { }
 

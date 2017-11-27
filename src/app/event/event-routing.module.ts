@@ -6,6 +6,7 @@ import { EventComponent } from './event.component';
 import { EventIndexComponent } from './event-index/event-index.component';
 import { EventShowComponent } from './event-show/event-show.component';
 import { EventNewComponent } from './event-new/event-new.component';
+import { EventUpdateComponent } from './event-update/event-update.component';
 
 const eventRoutes: Routes = [
   {
@@ -19,6 +20,10 @@ const eventRoutes: Routes = [
       {
         path: 'new',
         component: EventNewComponent
+      },
+      {
+        path: 'edit/:id',
+        component: EventUpdateComponent
       },
       {
       path: ':id',

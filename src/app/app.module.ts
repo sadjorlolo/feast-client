@@ -16,6 +16,7 @@ import { EventIndexComponent } from './event/event-index/event-index.component';
 import { EventService } from './event/event.service';
 import { EventShowComponent } from './event/event-show/event-show.component';
 import { EventNewComponent } from './event/event-new/event-new.component';
+import { EventUpdateComponent } from './event/event-update/event-update.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EventNewComponent } from './event/event-new/event-new.component';
     EventComponent,
     EventIndexComponent,
     EventShowComponent,
-    EventNewComponent
+    EventNewComponent,
+    EventUpdateComponent
   ],
   imports: [
     BrowserModule,
