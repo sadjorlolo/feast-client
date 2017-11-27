@@ -4,12 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EventComponent } from './event.component';
 import { EventIndexComponent } from './event-index/event-index.component';
+import { EventShowComponent } from './event-show/event-show.component';
 
 
 const eventRoutes: Routes = [
   {
-    path: 'index',
-    component: EventIndexComponent,
+    path: 'events',
+    component: EventComponent,
+    children: [
+      {
+        path: '',
+        component: EventIndexComponent
+      },
+      {
+      path: ':id',
+      component: EventShowComponent
+    }
+    ]
   }
 ]
 

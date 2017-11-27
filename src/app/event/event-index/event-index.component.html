@@ -1,6 +1,7 @@
 <div *ngIf="auth.user">
   <div *ngFor="let event of allEvents">
     <ul>
+      <li><a routerLink="/events/{{event.id}}">Id: {{event.id}}</a></li>
       <li>Event Name : {{event.name}}</li>
       <li>Event Date : {{event.date}}</li>
       <li>Event Time: {{event.time}}</li>

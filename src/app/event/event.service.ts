@@ -15,6 +15,14 @@ export class EventService {
     return this.http.get('http://localhost:4741/events', config);
   }
 
+  getOneEvent(eventId) {
+    console.log('get one event?')
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    return this.http.get(`http://localhost:4741/events/${eventId}`, config)
+    // console.log('getOne config is', config)
+  }
+
   constructor(private http: Http, private auth: AuthService) { }
 
 }

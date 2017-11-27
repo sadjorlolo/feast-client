@@ -1,0 +1,18 @@
+
+  <div *ngIf="auth.user">
+    <div *ngIf='oneEvent'>
+      <ul>
+        <li>Id: {{oneEvent.id}}</li>
+        <li>Event Name : {{oneEvent.name}}</li>
+        <li>Event Date : {{oneEvent.date}}</li>
+        <li>Event Time: {{oneEvent.time}}</li>
+        <li>Event Location: {{oneEvent.location}}</li>
+        <li>Event Description: {{oneEvent.description}}</li>
+        <li>Hosted By: {{oneEvent.event_creator.email}}</li>
+    </ul>
+    <hr>
+  </div>
+</div>
+<!-- <p>
+  show event works
+</p> -->

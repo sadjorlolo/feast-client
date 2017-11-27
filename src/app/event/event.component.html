@@ -1,2 +1,7 @@
-Events
-<router-outlet></router-outlet>
+<div *ngIf="auth.user">
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="!auth.user">
+  Looks like you aren't signed in. Please sign in to view page.
+</div>

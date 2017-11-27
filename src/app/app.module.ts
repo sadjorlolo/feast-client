@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EventComponent } from './event/event.component';
 import { EventIndexComponent } from './event/event-index/event-index.component';
 import { EventService } from './event/event.service';
+import { EventShowComponent } from './event/event-show/event-show.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EventService } from './event/event.service';
     LoginComponent,
     NavbarComponent,
     EventComponent,
-    EventIndexComponent
+    EventIndexComponent,
+    EventShowComponent
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,15 @@ import { of } from 'rxjs/observable/of';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
   user: any;
 
   constructor(
-    private http: Http
+    private http: Http,
+    private router: Router
   ) { }
 
   getUserToken() {
@@ -74,7 +76,10 @@ export class AuthService {
     this.http.delete(environment.apiOrigin + '/sign-out/' + this.user.id, config)
       .subscribe(
         // Remove the logged in User
-        data => this.user = null,
+        data => {
+        this.user = null
+        this.router.navigate(["/"])
+      },
         err => console.log(err)
       )
   }
