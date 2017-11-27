@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth/auth.service';
 
 export class EventComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }

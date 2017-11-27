@@ -12,7 +12,7 @@ export class EventUpdateComponent implements OnInit {
 
   updatedEvent = <any>{};
 
-  constructor(private auth: AuthService,
+  constructor(public auth: AuthService,
               private eventService: EventService,
               private route: ActivatedRoute,
               private router: Router) { }

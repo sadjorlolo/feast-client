@@ -13,7 +13,7 @@ export class EventNewComponent implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private eventService: EventService,
-      private auth: AuthService
+      public auth: AuthService
     ) { }
 
     newEvent = <any>{};

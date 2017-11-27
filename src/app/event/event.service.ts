@@ -65,6 +65,6 @@ export class EventService {
   }
 
   constructor(private http: Http,
-              private auth: AuthService) { }
+              public auth: AuthService) { }
 
 }
