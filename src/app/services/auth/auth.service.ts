@@ -36,7 +36,7 @@ export class AuthService {
         response => {
           return this.user = JSON.parse(response['_body']).user
         },
-        err => console.log
+        err => err
       )
   }
 
@@ -60,7 +60,7 @@ export class AuthService {
           this.signIn(credentials.credentials.email,
                       credentials.credentials.password)
         },
-        err => console.log(err)
+        err => err
       )
   }
 
@@ -80,7 +80,7 @@ export class AuthService {
         this.user = null
         this.router.navigate(["/"])
       },
-        err => console.log(err)
+        err => err
       )
   }
 
@@ -106,8 +106,8 @@ export class AuthService {
                     passwords,
                     config)
       .subscribe(
-        data => console.log('Success'),
-        err => console.log(err)
+        data => data,
+        err => err
       )
   }
 

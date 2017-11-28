@@ -8,6 +8,9 @@
       <li>Event Location: {{event.location}}</li>
       <li>Event Description: {{event.description}}</li>
       <li>Hosted By: {{event.event_creator.email}}</li>
+      <!-- <div *ngFor="let attendee of event.event_attendees">
+        <li>{{attendee.email}}</li>
+      </div> -->
       <li><a routerLink="/events/edit/{{event.id}}">Edit</a></li>
     </ul>
     <hr>

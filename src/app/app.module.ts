@@ -15,6 +15,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EventModule } from './event/event.module';
 // import { EventIndexComponent } from './event/event-index/event-index.component';
 import { EventService } from './event/event.service';
+import { InviteesComponent } from './invitees/invitees.component';
+import { InviteesService } from './invitees/invitees.service';
+import { InviteesModule } from './invitees/invitees.module';
+import { InviteesRoutingModule } from './invitees/invitees-routing.module';
 // import { EventShowComponent } from './event/event-show/event-show.component';
 // import { EventNewComponent } from './event/event-new/event-new.component';
 // import { EventUpdateComponent } from './event/event-update/event-update.component';
@@ -25,6 +29,7 @@ import { EventService } from './event/event.service';
     AppComponent,
     LoginComponent,
     NavbarComponent,
+    InviteesComponent,
     // EventComponent,
     // EventIndexComponent,
     // EventShowComponent,
@@ -38,8 +43,10 @@ import { EventService } from './event/event.service';
     AppRoutingModule,
     EventModule,
     EventRoutingModule,
+    InviteesModule,
+    InviteesRoutingModule
   ],
-  providers: [AuthService, EventService],
+  providers: [AuthService, EventService, InviteesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

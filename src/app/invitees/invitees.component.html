@@ -1,0 +1,8 @@
+<div *ngIf="auth.user">
+  Check out your invited events!
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="!auth.user">
+  Looks like you aren't signed in. Please sign in to view page.
+</div>
