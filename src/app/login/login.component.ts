@@ -29,11 +29,15 @@ export class LoginComponent implements OnInit {
   signIn() {
     this.auth.signIn(this.user.email,
                      this.user.password)
+    this.user = {}
+
   }
 
   changePassword() {
     this.auth.changePassword(this.oldPassword,
                              this.newPassword)
+    this.oldPassword = ''
+    this.newPassword = ''
   }
 
   signUp() {

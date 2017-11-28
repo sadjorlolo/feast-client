@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FlashMessagesModule } from 'angular2-flash-messages/module/module.js';
+// import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
 
 import { AppRoutingModule } from './app-routing.module';
 import { EventRoutingModule } from './event/event-routing.module';
@@ -44,7 +46,8 @@ import { InviteesRoutingModule } from './invitees/invitees-routing.module';
     EventModule,
     EventRoutingModule,
     InviteesModule,
-    InviteesRoutingModule
+    InviteesRoutingModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [AuthService, EventService, InviteesService],
   bootstrap: [AppComponent]

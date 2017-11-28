@@ -5,6 +5,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 @Injectable()
 export class AuthService {
@@ -12,7 +14,8 @@ export class AuthService {
 
   constructor(
     private http: Http,
-    private router: Router
+    private router: Router,
+    private _flashMessagesService: FlashMessagesService
   ) { }
 
   getUserToken() {
@@ -34,9 +37,12 @@ export class AuthService {
       .subscribe(
         // Save the response to User
         response => {
+          // this._flashMessagesService.show('Sign in successful!');
           return this.user = JSON.parse(response['_body']).user
         },
-        err => err
+        err => {
+          this._flashMessagesService.show('Sign in not successful!');
+        }
       )
   }
 
@@ -55,12 +61,16 @@ export class AuthService {
     this.http.post(environment.apiOrigin + '/sign-up', credentials)
       .subscribe(
         response => {
+          this._flashMessagesService.show('Sign up successful!');
           // Send the existing credentials back to the server to log in
           // the new user.
           this.signIn(credentials.credentials.email,
                       credentials.credentials.password)
+
         },
-        err => err
+        err => {
+          this._flashMessagesService.show('Sign up not successful!');
+        }
       )
   }
 
@@ -77,10 +87,14 @@ export class AuthService {
       .subscribe(
         // Remove the logged in User
         data => {
+        this._flashMessagesService.show('Sign out successful!');
         this.user = null
         this.router.navigate(["/"])
       },
-        err => err
+        err => {
+          this._flashMessagesService.show('Sign out not successful!');
+
+        }
       )
   }
 
@@ -106,8 +120,12 @@ export class AuthService {
                     passwords,
                     config)
       .subscribe(
-        data => data,
-        err => err
+        data => {
+          this._flashMessagesService.show('Password changed successfully!');
+        },
+        err => {
+          this._flashMessagesService.show('Password change not successful!');
+        }
       )
   }
 
