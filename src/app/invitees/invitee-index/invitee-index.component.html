@@ -1,15 +1,15 @@
 <div *ngIf="auth.user">
-  <div *ngFor="let invite of allInvites">
-    <ul>
-      <!-- <li><a routerLink="/events/{{event.id}}">Id: {{event.id}}</a></li> -->
-      <li>Event Name : {{invite.attended_event.name}}</li>
-      <li>Event Date : {{invite.attended_event.date}}</li>
-      <li>Event Time: {{invite.attended_event.time}}</li>
-      <li>Event Location: {{invite.attended_event.location}}</li>
-      <li>Event Description: {{invite.attended_event.description}}</li>
-      <!-- <li>Hosted By: {{invite.attended_event.event_creator.email}}</li> -->
-      <!-- <li><a routerLink="/events/edit/{{event.id}}">Edit</a></li> -->
-    </ul>
-    <hr>
-  </div>
+    <div *ngFor="let invite of allInvites">
+      <ul>
+        <li><a routerLink="/invitees/{{invite.id}}">Id: {{invite.id}}</a></li>
+        <li>Event Name : {{invite.attended_event.name}}</li>
+        <li>Event Date : {{invite.attended_event.date}}</li>
+        <li>Event Time: {{invite.attended_event.time}}</li>
+        <li>Event Location: {{invite.attended_event.location}}</li>
+        <li>Event Description: {{invite.attended_event.description}}</li>
+        <!-- <li>Hosted By: {{invite.attended_event.event_creator.email}}</li> -->
+        <!-- <li><a routerLink="/events/edit/{{event.id}}">Edit</a></li> -->
+      </ul>
+      <hr>
+    </div>
 </div>

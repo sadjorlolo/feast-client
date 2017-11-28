@@ -1,0 +1,23 @@
+
+    <div *ngIf='oneInvite'>
+      <ul>
+        <li>Id: {{oneInvite.attended_event.id}}</li>
+        <li>Event Name : {{oneInvite.attended_event.name}}</li>
+        <li>Event Date : {{oneInvite.attended_event.date}}</li>
+        <li>Event Time: {{oneInvite.attended_event.time}}</li>
+        <li>Event Location: {{oneInvite.attended_event.location}}</li>
+        <li>Event Description: {{oneInvite.attended_event.description}}</li>
+        <!-- <li>Hosted By: {{oneInvite.attended_event.event_creator.email}}</li> -->
+        <!-- <li><a routerLink="/events/edit/{{oneInvite.attended_event.id}}">Edit</a></li> -->
+        <!-- <li>
+          <form (ngSubmit)="deleteInvite(oneInvite.attended_event)">
+          <input type="submit" value="Delete"/>
+        </form>
+        </li> -->
+    </ul>
+    <hr>
+  </div>
+
+  <div *ngIf='!oneInvite'>
+    Whoops, look like that event doesn't exist.
+  </div>

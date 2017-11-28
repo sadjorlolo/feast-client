@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { InviteesComponent } from './invitees.component';
-import { InviteeIndexComponent} from './invitee-index/invitee-index.component';
+import { InviteeIndexComponent } from './invitee-index/invitee-index.component';
+import { InviteeShowComponent } from './invitee-show/invitee-show.component';
 
 const inviteeRoutes: Routes = [
   {
@@ -13,6 +14,10 @@ const inviteeRoutes: Routes = [
       {
         path: "",
         component: InviteeIndexComponent
+      },
+      {
+        path: ":id",
+        component: InviteeShowComponent
       }
     ]
   }

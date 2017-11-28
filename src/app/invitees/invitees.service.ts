@@ -19,4 +19,10 @@ export class InviteesService {
 
   }
 
+  getOneInvite(inviteId) {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    return this.http.get(`${environment.apiOrigin}/invitees/${inviteId}`, config)
+  }
+
 }
