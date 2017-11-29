@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InviteesService } from '../invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-invitee-new',
@@ -18,17 +20,23 @@ export class InviteeNewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private inviteesService: InviteesService,
-    public auth: AuthService
+    public auth: AuthService,
+    private router: Router
   ) { }
 
   newInvitee: string;
 
   saveInvitee(invitee) {
     this.inviteesService.saveInvitee(invitee)
+      // console.log('invitee is', invitee)
       .subscribe(response => {
-        console.log('save invite', response.json())
 
+      // this.eventService.getOneEvent(this.event_id)
+        // console.log('save invite', response.json())
+        // console.log('invitee event id', response.json().invitee.attended_event.id)
       })
+      console.log('router nav invitee is', invitee)
+      // this.router.navigate(["/events/" + invitee.invitee.event_id])
   }
 
   getInvitee(newInvitee) {

@@ -19,7 +19,7 @@ export class EventShowComponent implements OnInit {
     private route: ActivatedRoute,
     private eventService: EventService,
     public auth: AuthService,
-    private router: Router//,
+    private router: Router,
     // private inviteesService: InviteesService
   ) { }
 
