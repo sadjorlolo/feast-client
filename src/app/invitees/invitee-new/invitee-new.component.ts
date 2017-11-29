@@ -4,6 +4,8 @@ import { InviteesService } from '../invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { EventShowComponent } from '../../event/event-show/event-show.component';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 
 @Component({
@@ -23,7 +25,8 @@ export class InviteeNewComponent implements OnInit {
     private inviteesService: InviteesService,
     public auth: AuthService,
     private router: Router,
-    private eventShow: EventShowComponent
+    private eventShow: EventShowComponent,
+    private _flashMessagesService: FlashMessagesService
   ) { }
 
   newInvitee: string;
@@ -61,6 +64,7 @@ export class InviteeNewComponent implements OnInit {
           }
         }
         this.saveInvitee(invitation)
+        this.newInvitee = ''
 
       })
   }

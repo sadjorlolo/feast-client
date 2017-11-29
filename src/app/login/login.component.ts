@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
   oldPassword: string;
   newPassword: string;
 
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService,
+    private _flashMessagesService: FlashMessagesService
+  ) { }
 
   ngOnInit() {
   }
@@ -41,9 +45,21 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
-    this.auth.signUp(this.newUser.email,
-                     this.newUser.password,
-                     this.newUser.password_confirmation)
+    if (!this.newUser.email) {
+      this._flashMessagesService.show('Email is required!')
+      this.newUser = {}
+    } else if (!this.newUser.password) {
+      this._flashMessagesService.show('Password is required!')
+      this.newUser = {}
+    } else if (!this.newUser.password_confirmation) {
+      this._flashMessagesService.show('Password Confirmation is required!')
+      this.newUser = {}
+    } else {
+      this.auth.signUp(this.newUser.email,
+        this.newUser.password,
+        this.newUser.password_confirmation)
+        this.newUser = {}
+    }
   }
 
 
