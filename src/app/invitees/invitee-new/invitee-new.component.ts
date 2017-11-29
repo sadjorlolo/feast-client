@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InviteesService } from '../invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { EventShowComponent } from '../../event/event-show/event-show.component';
 
 
 @Component({
@@ -21,16 +22,20 @@ export class InviteeNewComponent implements OnInit {
     private route: ActivatedRoute,
     private inviteesService: InviteesService,
     public auth: AuthService,
-    private router: Router
+    private router: Router,
+    private eventShow: EventShowComponent
   ) { }
 
   newInvitee: string;
+
 
   saveInvitee(invitee) {
     this.inviteesService.saveInvitee(invitee)
       // console.log('invitee is', invitee)
       .subscribe(response => {
-
+      console.log('response is', response.json().invitee.event_attendee)
+      console.log('eventshow', this.eventShow.oneEvent)
+        this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
       // this.eventService.getOneEvent(this.event_id)
         // console.log('save invite', response.json())
         // console.log('invitee event id', response.json().invitee.attended_event.id)
