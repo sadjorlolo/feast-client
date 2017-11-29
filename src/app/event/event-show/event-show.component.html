@@ -8,6 +8,15 @@
         <li>Event Location: {{oneEvent.location}}</li>
         <li>Event Description: {{oneEvent.description}}</li>
         <li>Hosted By: {{oneEvent.event_creator.email}}</li>
+
+        <li *ngIf="oneEvent.event_attendees.length">Current Attendees: </li>
+          <div *ngFor="let attendee of oneEvent.event_attendees">
+            <li>{{attendee.email}}</li>
+          </div>
+
+
+        <app-invitee-new [event_id]="oneEvent.id"></app-invitee-new>
+
         <li><a routerLink="/events/edit/{{oneEvent.id}}">Edit</a></li>
         <li>
           <form (ngSubmit)="deleteEvent(oneEvent)">

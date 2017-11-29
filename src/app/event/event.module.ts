@@ -12,13 +12,17 @@ import { EventService } from './event.service';
 import { EventNewComponent } from './event-new/event-new.component';
 import { EventUpdateComponent } from './event-update/event-update.component';
 
+import { InviteeNewComponent } from '../invitees/invitee-new/invitee-new.component';
+
+
 @NgModule({
   declarations: [
     EventComponent,
     EventIndexComponent,
     EventShowComponent,
     EventNewComponent,
-    EventUpdateComponent
+    EventUpdateComponent,
+    InviteeNewComponent
   ],
   imports: [
     BrowserModule,

@@ -25,4 +25,18 @@ export class InviteesService {
     return this.http.get(`${environment.apiOrigin}/invitees/${inviteId}`, config)
   }
 
+  getInvitee() {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+
+    return this.http.get(`${environment.apiOrigin}/users`, config)
+
+  }
+
+  saveInvitee(invitation) {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+
+    return this.http.post(`${environment.apiOrigin}/invitees`, invitation, config);
+  }
 }

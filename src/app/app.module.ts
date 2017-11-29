@@ -21,6 +21,7 @@ import { InviteesComponent } from './invitees/invitees.component';
 import { InviteesService } from './invitees/invitees.service';
 import { InviteesModule } from './invitees/invitees.module';
 import { InviteesRoutingModule } from './invitees/invitees-routing.module';
+
 // import { EventShowComponent } from './event/event-show/event-show.component';
 // import { EventNewComponent } from './event/event-new/event-new.component';
 // import { EventUpdateComponent } from './event/event-update/event-update.component';

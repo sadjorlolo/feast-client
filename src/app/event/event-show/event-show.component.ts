@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
+import { InviteesService } from '../../invitees/invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 
@@ -18,7 +19,8 @@ export class EventShowComponent implements OnInit {
     private route: ActivatedRoute,
     private eventService: EventService,
     public auth: AuthService,
-    private router: Router
+    private router: Router//,
+    // private inviteesService: InviteesService
   ) { }
 
   deleteEvent(event) {
@@ -29,11 +31,16 @@ export class EventShowComponent implements OnInit {
       })
   }
 
+  // saveEvent(newEvent) {
+  //   this.InviteesService
+  // }
+
   ngOnInit() {
     this.route.params.forEach(param => {
       // console.log('param id is', param.id)
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
+        console.log(response.json())
         this.oneEvent = response.json().event
       })
     })
