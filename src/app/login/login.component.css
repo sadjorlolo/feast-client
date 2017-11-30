@@ -56,3 +56,22 @@
   height: 25px;
   font-size: 15px;
 }
+
+.change-pw {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
+
+.change-pw input {
+  width: 200px;
+  height: 20px;
+  font-size: 15px;
+  padding-left: 3px;
+}
+
+.change-pw-button {
+  width: 210px;
+  height: 25px;
+  font-size: 15px;
+}

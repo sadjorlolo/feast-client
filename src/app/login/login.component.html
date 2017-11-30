@@ -2,24 +2,23 @@
   <input [(ngModel)]="newUser.email" type="text" placeholder="Email" />
   <input [(ngModel)]="newUser.password" type="text" placeholder="Password" />
   <input [(ngModel)]="newUser.password_confirmation" type="text" placeholder="Confirm Password" />
-  <button class='sign-up-button' (click)="signUp()" type="submit">Sign Up!</button>
+  <button class='sign-up-button' (click)="signUp()" type="submit">Sign Up</button>
 </div>
 
 <div *ngIf="!auth.user" class="container sign-in">
   <input [(ngModel)]="user.email" type="text" placeholder="Email" />
   <input [(ngModel)]="user.password" type="text" placeholder="Password" />
-  <button class='sign-in-button' (click)="signIn()" type="submit">Sign In!</button>
+  <button class='sign-in-button' (click)="signIn()" type="submit">Sign In</button>
 </div>
 
 <div *ngIf="auth.user" class="container change-pw">
-  <h3>Change Password</h3>
   <input [(ngModel)]="oldPassword" type="text" placeholder="Old Password" />
   <input [(ngModel)]="newPassword" type="text" placeholder="New Password" />
-  <input (click)="changePassword()" type="submit" value="Change Password" />
+  <button class='change-pw-button' (click)="changePassword()" type="submit">Change Password</button>
 </div>
 
 <div *ngIf="auth.user" class="container sign-out">
-  <button class='sign-out-button' (click)="signOut()" type="submit">Sign Out!</button>
+  <button class='sign-out-button' (click)="signOut()" type="submit">Sign Out</button>
 </div>
 
 <div *ngIf="auth.user" class="container sign-in-msg">You are signed in as <strong>{{auth.user.email}}</strong></div>

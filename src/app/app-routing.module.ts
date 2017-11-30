@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { EventComponent } from './event/event.component';
+// import { InviteesComponent } from './invitees/invitees.component';
 // import { EventIndexComponent } from './event/event-index/event-index.component';
 // import { EventShowComponent } from './event/event-show/event-show.component';
 // import { EventNewComponent } from './event/event-new/event-new.component';
