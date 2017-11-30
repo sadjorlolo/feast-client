@@ -1,21 +1,28 @@
 
-    <div *ngIf='oneInvite'>
-      <ul>
-        <li>Id: {{oneInvite.attended_event.id}}</li>
-        <li>Event Name : {{oneInvite.attended_event.name}}</li>
-        <li>Event Date : {{oneInvite.attended_event.date}}</li>
-        <li>Event Time: {{oneInvite.attended_event.time}}</li>
-        <li>Event Location: {{oneInvite.attended_event.location}}</li>
-        <li>Event Description: {{oneInvite.attended_event.description}}</li>
+    <div class='invite-show' *ngIf='oneInvite'>
+      <div class='show-this-invite'>
+        <!-- <li>Id: {{oneInvite.attended_event.id}}</li> -->
+        <h2 *ngIf="oneInvite.attended_event.name">{{oneInvite.attended_event.name}}</h2>
+        <h2 *ngIf="!oneInvite.attended_event.name">No Name Available</h2>
+
+
+        <p *ngIf="oneInvite.attended_event.date"> <span> Date:</span> {{oneInvite.attended_event.date}}</p>
+        <p *ngIf="!oneInvite.attended_event.date"> <span> Date:</span> No Date Available</p>
+
+        <p *ngIf="oneInvite.attended_event.time"> <span> Time:</span> {{oneInvite.attended_event.time}}</p>
+        <p *ngIf="!oneInvite.attended_event.time"> <span> Time:</span> No Time Available</p>
+
+        <p *ngIf="oneInvite.attended_event.location"> <span> Location:</span> {{oneInvite.attended_event.location}}</p>
+        <p *ngIf="!oneInvite.attended_event.location"><span>  Location:</span> No Location Available</p>
+
+        <p class='invite-desc' *ngIf="oneInvite.attended_event.description"> <span> Description:</span> {{oneInvite.attended_event.description}}</p>
+        <p *ngIf="!oneInvite.attended_event.description"> <span> Description:</span> No Description Provided</p>
         <!-- <li>Hosted By: {{oneInvite.attended_event.event_creator.email}}</li> -->
         <!-- <li><a routerLink="/events/edit/{{oneInvite.attended_event.id}}">Edit</a></li> -->
-        <li>
           <form (ngSubmit)="deleteInvite(oneInvite)">
-          <input type="submit" value="Delete"/>
-        </form>
-        </li>
-    </ul>
-    <hr>
+            <button class="delete-invite-button" type="submit">Delete Invitation</button>
+          </form>
+  </div>
   </div>
 
   <div *ngIf='!oneInvite'>

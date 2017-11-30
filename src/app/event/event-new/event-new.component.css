@@ -10,9 +10,22 @@
   /*width: 200px;*/
 }
 
-.new-event-form input, textarea {
+.new-event-form input {
   width: 300px;
-  font-size: 15px;
+  font-size: 18px;
   margin: 2px;
+}
+
+textarea {
+  width: 300px;
+  font-size: 18px;
   resize: none;
+  margin-left: 3px;
+}
+
+.create-event-button {
+  height: 25px;
+  font-size: 15px;
+  width: 200px;
+  margin: 5px;
 }

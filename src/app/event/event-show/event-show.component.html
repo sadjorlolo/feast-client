@@ -14,7 +14,7 @@
         <p *ngIf="oneEvent.location"><span>Location:</span> {{oneEvent.location}}</p>
         <p *ngIf="!oneEvent.location"><span>Location:</span> No Location Provided</p>
 
-        <p *ngIf="oneEvent.description">{{oneEvent.description}}</p>
+        <p class='event-desc' *ngIf="oneEvent.description">{{oneEvent.description}}</p>
         <p *ngIf="!oneEvent.description">No Description Provided</p>
 
 

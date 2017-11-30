@@ -1,0 +1,30 @@
+.update-event {
+  border: 1px solid black;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.update-event-form {
+  border: 1px solid green;
+}
+
+.update-event-form input {
+  width: 300px;
+  font-size: 18px;
+  margin: 2px;
+}
+
+textarea {
+  width: 300px;
+  font-size: 18px;
+  resize: none;
+  margin-left: 3px;
+}
+
+.update-event-button {
+  height: 25px;
+  font-size: 15px;
+  width: 200px;
+  margin: 5px;
+}

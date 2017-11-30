@@ -34,16 +34,26 @@ export class EventUpdateComponent implements OnInit {
 
   updateEvent(updatedEvent) {
     // console.log('updating event')
-    this.eventService.updateEvent(updatedEvent)
-      .subscribe(response => {
-        this._flashMessagesService.show('Event Updated!')
-        // console.log('updateEvent response', response.json())
-        let event = response.json().event
-        this.router.navigate(["/events/" + event.id])
+    console.log('updateEventis', updatedEvent)
 
-      }, err => {
-        this._flashMessagesService.show('Something went wrong. Please try again.')
-      })
+    if (updatedEvent.name == null || updatedEvent.name == '') {
+      this._flashMessagesService.show('You must have an event name.')
+    } else {
+
+      this.eventService.updateEvent(updatedEvent)
+        .subscribe(response => {
+          this._flashMessagesService.show('Event Updated!')
+          // console.log('updateEvent response', response.json())
+          let event = response.json().event
+          this.router.navigate(["/events/" + event.id])
+
+        }, err => {
+          this._flashMessagesService.show('Something went wrong. Please try again.')
+        })
+
+    }
+
+
   }
 
 }

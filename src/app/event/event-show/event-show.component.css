@@ -44,3 +44,7 @@
   font-size: 15px;
   width: 230px;
 }
+
+.event-desc {
+  white-space: pre-wrap;
+}

@@ -1,19 +1,34 @@
-<div *ngIf="auth.user">
-    <div *ngFor="let invite of allInvites">
-      <ul>
-        <li><a routerLink="/invitees/{{invite.id}}">Id: {{invite.id}}</a></li>
-        <li>Event Name : {{invite.attended_event.name}}</li>
-        <li>Event Date : {{invite.attended_event.date}}</li>
-        <li>Event Time: {{invite.attended_event.time}}</li>
-        <li>Event Location: {{invite.attended_event.location}}</li>
-        <li>Event Description: {{invite.attended_event.description}}</li>
-        <!-- <li>Hosted By: {{invite.attended_event.event_creator.email}}</li> -->
-        <!-- <li><a routerLink="/events/edit/{{event.id}}">Edit</a></li> -->
-      </ul>
-      <hr>
-    </div>
-</div>
+<div class='invitee-index' *ngIf="auth.user">
+    <div class='invitee' *ngFor="let invite of allInvites">
+      <div class='this-invite'>
 
-<div *ngIf="!allInvites.length">
-  Looks like you don't have any invitations yet.
+        <h2 *ngIf="invite.attended_event.name">{{invite.attended_event.name}}</h2>
+        <h2 *ngIf="!invite.attended_event.name">This event does not have a name.</h2>
+
+        <div class='event-deets'>
+          <p *ngIf="invite.attended_event.date"> Date : {{invite.attended_event.date}}</p>
+          <p *ngIf="!invite.attended_event.date"> Date: No Date Available</p>
+
+          <p *ngIf="invite.attended_event.time"> Time: {{invite.attended_event.time}}</p>
+          <p *ngIf="!invite.attended_event.time"> Time: No Time Available</p>
+
+          <p *ngIf="invite.attended_event.location"> Location: {{invite.attended_event.location}}</p>
+          <p *ngIf="!invite.attended_event.location"> Location: No Location Available</p>
+
+          <p *ngIf="invite.attended_event.description"> Description: {{invite.attended_event.description}}</p>
+          <p *ngIf="!invite.attended_event.description"> Description: {{invite.attended_event.description}}</p>
+
+        </div>
+    </div>
+
+    <a class='view-invite-button' routerLink="/invitees/{{invite.id}}">
+      View Invitation
+    </a>
+
+  </div>
+
+  <div class='no-invite' *ngIf="!allInvites.length">
+    Looks like you don't have any invitations yet.
+  </div>
+
 </div>

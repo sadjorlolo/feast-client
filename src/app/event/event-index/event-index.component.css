@@ -1,3 +1,8 @@
+.events-index {
+  border: 1px solid red;
+  text-align: center;
+}
+
 .no-events {
   text-align: center;
   font-size: 20px;

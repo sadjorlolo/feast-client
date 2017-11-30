@@ -1,13 +1,13 @@
 
 <div class='update-event'>
 
-  <form (ngSubmit)="updateEvent(updatedEvent)">
+  <form class='update-event-form' (ngSubmit)="updateEvent(updatedEvent)">
     <input name="name" [(ngModel)]="updatedEvent.name" type="text" placeholder="Event Name" />
     <input name="date" [(ngModel)]="updatedEvent.date" type="text" placeholder="Event Date" />
     <input name="time" [(ngModel)]="updatedEvent.time" type="text" placeholder="Event Time" />
     <input name="location" [(ngModel)]="updatedEvent.location" type="text" placeholder="Event Location" />
-    <input name="description" [(ngModel)]="updatedEvent.description" type="text" placeholder="Event Description" />
+    <textarea name="description" [(ngModel)]="updatedEvent.description" type="text" placeholder="Event Description" rows="5"></textarea>
 
-    <input type="submit" value="Update Event!" />
+    <button class='update-event-button' type="submit"> Update Event </button>
   </form>
 </div>
