@@ -1,5 +1,6 @@
 
-    <div *ngIf='oneEvent'>
+    <div class='event-show' *ngIf='oneEvent'>
+      <div class='show-this-event'>
       <ul>
         <li>Id: {{oneEvent.id}}</li>
         <li>Event Name : {{oneEvent.name}}</li>
@@ -26,8 +27,8 @@
           <input type="submit" value="Delete"/>
         </form>
         </li>
-    </ul>
-    <hr>
+      </ul>
+    </div>
   </div>
 
   <div *ngIf='!oneEvent'>

@@ -18,13 +18,14 @@
   word-wrap: break-word;
   height: 240px;
   overflow: scroll;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
 }
 
 .event-deets {
   overflow: scroll;
   height: 160px;
   border: 1px solid green;
+  /*white-space: pre-wrap;*/
 
 }
 

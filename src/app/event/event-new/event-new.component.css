@@ -1,0 +1,18 @@
+.new-event {
+  border: 1px solid black;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.new-event-form {
+  border: 1px solid green;
+  /*width: 200px;*/
+}
+
+.new-event-form input, textarea {
+  width: 300px;
+  font-size: 15px;
+  margin: 2px;
+  resize: none;
+}

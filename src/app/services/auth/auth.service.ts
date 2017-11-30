@@ -92,7 +92,8 @@ export class AuthService {
         this.router.navigate(["/"])
       },
         err => {
-          this._flashMessagesService.show('Sign out not successful!');
+          // this.user = null
+          this._flashMessagesService.show('Sign out not successful! Please refresh.');
 
         }
       )

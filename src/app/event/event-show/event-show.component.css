@@ -1,0 +1,13 @@
+.event-show {
+  border: 1px solid black;
+}
+
+.show-this-event {
+  border: 1px solid blue;
+  width: 500px;
+  margin: auto;
+}
+
+.show-this-event li {
+  word-wrap: break-word;
+}
