@@ -1,0 +1,11 @@
+.app-title {
+  font-family: 'Grand Hotel';
+  font-size: 80px;
+  margin-top: 60px;
+}
+
+.flash-msg {
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+}

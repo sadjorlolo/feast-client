@@ -2,16 +2,16 @@
   <input [(ngModel)]="newUser.email" type="text" placeholder="Email" />
   <input [(ngModel)]="newUser.password" type="text" placeholder="Password" />
   <input [(ngModel)]="newUser.password_confirmation" type="text" placeholder="Confirm Password" />
-  <input class='sign-in-button' (click)="signUp()" type="submit" value="Sign Up!" />
+  <button class='sign-up-button' (click)="signUp()" type="submit">Sign Up!</button>
 </div>
 
 <div *ngIf="!auth.user" class="container sign-in">
   <input [(ngModel)]="user.email" type="text" placeholder="Email" />
   <input [(ngModel)]="user.password" type="text" placeholder="Password" />
-  <input (click)="signIn()" type="submit" value="Sign in!" />
+  <button class='sign-in-button' (click)="signIn()" type="submit">Sign In!</button>
 </div>
 
-<div *ngIf="auth.user" class="container">
+<div *ngIf="auth.user" class="container change-pw">
   <h3>Change Password</h3>
   <input [(ngModel)]="oldPassword" type="text" placeholder="Old Password" />
   <input [(ngModel)]="newPassword" type="text" placeholder="New Password" />
@@ -19,7 +19,7 @@
 </div>
 
 <div *ngIf="auth.user" class="container sign-out">
-  <input (click)="signOut()" type="submit" value="Sign Out!" />
+  <button class='sign-out-button' (click)="signOut()" type="submit">Sign Out!</button>
 </div>
 
 <div *ngIf="auth.user" class="container sign-in-msg">You are signed in as <strong>{{auth.user.email}}</strong></div>

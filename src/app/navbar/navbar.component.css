@@ -1,0 +1,15 @@
+.container-fluid {
+  text-align: center;
+}
+
+.nav li {
+  display: inline-block;
+  height: 35px;
+  border: 1px solid black;
+  width: 300px;
+  text-align: center;
+  font-size: 30px;
+  margin: 5px;
+  padding-bottom: 10px;
+  font-family: 'Nunito';
+}

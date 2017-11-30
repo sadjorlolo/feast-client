@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.auth.signIn(this.user.email,
                      this.user.password)
     this.user = {}
+    this.newUser = {}
 
   }
 
@@ -48,17 +49,22 @@ export class LoginComponent implements OnInit {
     if (!this.newUser.email) {
       this._flashMessagesService.show('Email is required!')
       this.newUser = {}
+      this.user = {}
     } else if (!this.newUser.password) {
       this._flashMessagesService.show('Password is required!')
       this.newUser = {}
+      this.user = {}
     } else if (!this.newUser.password_confirmation) {
       this._flashMessagesService.show('Password Confirmation is required!')
       this.newUser = {}
+      this.user = {}
     } else {
       this.auth.signUp(this.newUser.email,
         this.newUser.password,
         this.newUser.password_confirmation)
         this.newUser = {}
+        this.user = {}
+
     }
   }
 
