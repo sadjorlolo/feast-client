@@ -43,7 +43,7 @@ export class InviteeNewComponent implements OnInit {
       if (response.json() !== null) {
         this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
       } else {
-        this._flashMessagesService.show('The user you selected either does not exist or is already an attendee.')
+        this._flashMessagesService.show('The user you selected is already an attendee.')
       }
       // this.eventService.getOneEvent(this.event_id)
         // console.log('save invite', response.json())
@@ -77,6 +77,8 @@ export class InviteeNewComponent implements OnInit {
             }
 
             this.saveInvitee(invitation)
+          } else {
+            this._flashMessagesService.show('The user you entered does not exist.')
           }
           this.newInvitee = ''
 

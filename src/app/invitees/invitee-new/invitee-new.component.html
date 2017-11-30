@@ -1,7 +1,6 @@
 <div class='add-invitee'>
   <form (ngSubmit)="getInvitee(newInvitee)">
     <input name="email" [(ngModel)]="newInvitee" type="text" placeholder="Add attendee by email" />
-    <input type="submit" value="Add Attendee!" />
-    {{event_id}}
+    <button class='add-invitee-button' type="submit" value="Add Attendee!"> Add Attendee</button>
   </form>
 </div>

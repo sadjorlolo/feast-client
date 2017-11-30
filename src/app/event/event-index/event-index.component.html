@@ -1,11 +1,21 @@
 <div *ngIf="auth.user">
   <div class='event' *ngFor="let event of allEvents">
     <div class='this-event'>
-      <h2>{{event.name}}</h2>
+
+      <h2 *ngIf="event.name">{{event.name}}</h2>
+      <h2 *ngIf="!event.name">No Event Name Provided</h2>
+
       <div class='event-deets'>
-        <p>Date: {{event.date}}</p>
-        <p>Time: {{event.time}}</p>
-        <p>{{event.location}}</p>
+
+        <p *ngIf="event.date">Date: {{event.date}}</p>
+        <p *ngIf="!event.date">Date: No Event Name Provided</p>
+
+        <p *ngIf="event.time">Time: {{event.time}}</p>
+        <p *ngIf="!event.time">Time: No Event Time Provided</p>
+
+        <p *ngIf="event.location">Location: {{event.location}}</p>
+        <p *ngIf="!event.location">Location: No Location Provided</p>
+
       </div>
     </div>
     <a class='view-event-button' routerLink="/events/{{event.id}}">

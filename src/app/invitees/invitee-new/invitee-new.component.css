@@ -1,0 +1,18 @@
+.add-invitee input {
+  width: 150px;
+  margin-left: 20px;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.add-invitee-button {
+  border: 1px solid red;
+  height: 25px;
+  box-sizing: border-box;
+  width: 100px;
+  font-size: 15px;
+}
+
+form button {
+
+}

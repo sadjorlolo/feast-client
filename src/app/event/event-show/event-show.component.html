@@ -1,33 +1,36 @@
 
     <div class='event-show' *ngIf='oneEvent'>
       <div class='show-this-event'>
-      <ul>
-        <li>Id: {{oneEvent.id}}</li>
-        <li>Event Name : {{oneEvent.name}}</li>
-        <li>Event Date : {{oneEvent.date}}</li>
-        <li>Event Time: {{oneEvent.time}}</li>
-        <li>Event Location: {{oneEvent.location}}</li>
-        <li>Event Description: {{oneEvent.description}}</li>
-        <li>Hosted By: {{oneEvent.event_creator.email}}</li>
 
-        <li *ngIf="oneEvent.event_attendees.length">Current Attendees: </li>
+        <h2 *ngIf="oneEvent.name">{{oneEvent.name}}</h2>
+        <h2 *ngIf="!oneEvent.name">No Event Name Provided</h2>
+
+        <p *ngIf="oneEvent.date"><span>Date:</span> {{oneEvent.date}}</p>
+        <p *ngIf="!oneEvent.date"><span>Date:</span> No Date Provided</p>
+
+        <p *ngIf="oneEvent.time"><span>Time:</span> {{oneEvent.time}}</p>
+        <p *ngIf="!oneEvent.time"><span>Time:</span> No Time Provided</p>
+
+        <p *ngIf="oneEvent.location"><span>Location:</span> {{oneEvent.location}}</p>
+        <p *ngIf="!oneEvent.location"><span>Location:</span> No Location Provided</p>
+
+        <p *ngIf="oneEvent.description">{{oneEvent.description}}</p>
+        <p *ngIf="!oneEvent.description">No Description Provided</p>
+
+
+        <p *ngIf="oneEvent.event_attendees.length"><span>Current Attendees:</span> </p>
           <div *ngFor="let attendee of oneEvent.event_attendees">
-            <li>{{attendee.email}}</li>
-            <form (ngSubmit)="deleteInvitee(attendee, oneEvent)">
-              <input type="submit" value="Uninvite" />
-            </form>
+            <p class='oneAttendee'>{{attendee.email}}</p>
           </div>
-
 
         <app-invitee-new [event_id]="oneEvent.id"></app-invitee-new>
 
-        <li><a routerLink="/events/edit/{{oneEvent.id}}">Edit</a></li>
-        <li>
+        <a class='edit-event-button' routerLink="/events/edit/{{oneEvent.id}}">
+          Edit
+        </a>
           <form (ngSubmit)="deleteEvent(oneEvent)">
-          <input type="submit" value="Delete"/>
+          <button class='delete-event-button' type="submit">Delete Event</button>
         </form>
-        </li>
-      </ul>
     </div>
   </div>
 

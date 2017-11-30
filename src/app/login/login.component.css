@@ -19,14 +19,14 @@
 }
 
 .sign-in-msg {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 20px;
   font-size: 20px;
 }
 
 .sign-out {
-  position: fixed;
+  position: absolute;
   top: 45px;
   right: 20px;
 }
@@ -58,7 +58,7 @@
 }
 
 .change-pw {
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 20px;
 }

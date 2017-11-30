@@ -37,7 +37,7 @@ export class AuthService {
       .subscribe(
         // Save the response to User
         response => {
-          // this._flashMessagesService.show('Sign in successful!');
+          this._flashMessagesService.show('Sign in successful!');
           return this.user = JSON.parse(response['_body']).user
         },
         err => {
