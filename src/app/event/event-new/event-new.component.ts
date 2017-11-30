@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 @Component({
   selector: 'app-event-new',
@@ -15,7 +17,8 @@ export class EventNewComponent implements OnInit {
       private route: ActivatedRoute,
       private eventService: EventService,
       public auth: AuthService,
-      private router: Router
+      private router: Router,
+      private _flashMessagesService: FlashMessagesService
     ) { }
 
     newEvent = <any>{};
@@ -27,9 +30,10 @@ export class EventNewComponent implements OnInit {
         .subscribe(response => {
           // console.log('newEvent response is', response.json())
           // let event = response.json()
+          this._flashMessagesService.show('Event has been saved successfully!')
           this.router.navigate(["/events/" + response.json().event.id])
-
-
+        }, err => {
+          this._flashMessagesService.show('Something went wrong. Please try again.')
         })
     }
 

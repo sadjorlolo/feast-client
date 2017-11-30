@@ -42,38 +42,50 @@ export class InviteeNewComponent implements OnInit {
       console.log('save response is', response.json())
       if (response.json() !== null) {
         this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
+      } else {
+        this._flashMessagesService.show('The user you selected either does not exist or is already an attendee.')
       }
       // this.eventService.getOneEvent(this.event_id)
         // console.log('save invite', response.json())
         // console.log('invitee event id', response.json().invitee.attended_event.id)
-      })
+      }, err => {
+        this._flashMessagesService.show('Something went wrong. Please try again.')
+    })
       console.log('router nav invitee is', invitee)
       // this.router.navigate(["/events/" + invitee.invitee.event_id])
   }
 
   getInvitee(newInvitee) {
-    console.log('newInvitee is', newInvitee)
-    console.log('event_id is', this.event_id)
-    this.inviteesService.getInvitee()
-      .subscribe(response => {
-        console.log('all users response is', response.json().users)
-        let users = response.json().users
-        let invitee = users.find(user => user.email == newInvitee)
-        console.log('the invitation is for ', invitee)
+    if (!newInvitee) {
+      this._flashMessagesService.show('Attendee Email is required!')
+    } else {
+      console.log('newInvitee is', newInvitee)
+      console.log('event_id is', this.event_id)
+      this.inviteesService.getInvitee()
+        .subscribe(response => {
+          console.log('all users response is', response.json().users)
+          let users = response.json().users
+          let invitee = users.find(user => user.email == newInvitee)
+          console.log('the invitation is for ', invitee)
 
-        if (invitee !== undefined) {
-          let invitation = {
-            "invitee": {
-              "user_id": invitee.id,
-              "event_id": this.event_id
+          if (invitee !== undefined) {
+            let invitation = {
+              "invitee": {
+                "user_id": invitee.id,
+                "event_id": this.event_id
+              }
             }
+
+            this.saveInvitee(invitation)
           }
+          this.newInvitee = ''
 
-          this.saveInvitee(invitation)
-        }
-        this.newInvitee = ''
+        }, err => {
+          this._flashMessagesService.show('Something went wrong. Please try again.')
+        })
 
-      })
+    }
+
   }
 
   ngOnInit() {

@@ -4,6 +4,8 @@ import { EventService } from '../event.service';
 import { InviteesService } from '../../invitees/invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 
 @Component({
@@ -20,6 +22,7 @@ export class EventShowComponent implements OnInit {
     private eventService: EventService,
     public auth: AuthService,
     private router: Router,
+    private _flashMessagesService: FlashMessagesService
     // private inviteesService: InviteesService
   ) { }
 
@@ -27,8 +30,11 @@ export class EventShowComponent implements OnInit {
     // console.log('show ts event is', event)
     this.eventService.deleteEvent(event)
       .subscribe(response => {
+        this._flashMessagesService.show('Event deleted!')
         this.router.navigate(["/events"]);
-      }, err => {})
+      }, err => {
+        this._flashMessagesService.show('Something went wrong. Please try again.')
+      })
   }
 
   deleteInvitee(invitee, oneEvent){
@@ -47,7 +53,9 @@ export class EventShowComponent implements OnInit {
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
         this.oneEvent = response.json().event
-      }, err => {})
+      }, err => {
+        this._flashMessagesService.show('Something went wrong. Please try again.')
+      })
     })
   }
 

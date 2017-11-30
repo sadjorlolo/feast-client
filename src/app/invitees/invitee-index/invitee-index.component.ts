@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InviteesService } from '../invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 @Component({
   selector: 'app-invitee-index',
@@ -13,7 +15,8 @@ export class InviteeIndexComponent implements OnInit {
 
   constructor(
     private inviteesService: InviteesService,
-    public auth: AuthService
+    public auth: AuthService,
+    private _flashMessagesService: FlashMessagesService
   ) { }
 
   ngOnInit() {
@@ -21,6 +24,8 @@ export class InviteeIndexComponent implements OnInit {
       .subscribe(response => {
         console.log(response.json().invitees)
         this.allInvites = response.json().invitees
+      }, err => {
+        this._flashMessagesService.show('Something went wrong. Please try again.')
       })
   }
 

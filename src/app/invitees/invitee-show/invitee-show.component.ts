@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { InviteesService } from '../invitees.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service.js';
+
 
 @Component({
   selector: 'app-invitee-show',
@@ -17,16 +19,20 @@ export class InviteeShowComponent implements OnInit {
     private route: ActivatedRoute,
     private inviteesService: InviteesService,
     public auth: AuthService,
-    private router: Router
+    private router: Router,
+    private _flashMessagesService: FlashMessagesService
   ) { }
 
   deleteInvite(oneInvite) {
     console.log('oneinvite is', oneInvite)
     this.inviteesService.deleteInvite(oneInvite)
     .subscribe(response => {
+      this._flashMessagesService.show('Your invitation has been deleted.')
       console.log('deleteevent response is', response.json())
       this.router.navigate(["/invitees"]);
 
+    }, err => {
+      this._flashMessagesService.show('Something went wrong. Please try again.')
     })
   }
 
@@ -36,7 +42,9 @@ export class InviteeShowComponent implements OnInit {
       .subscribe(response => {
         // console.log(response.json().invitee)
         this.oneInvite = response.json().invitee
-      }, err => {})
+      }, err => {
+        this._flashMessagesService.show("Something went wrong. Please try again.")
+      })
     })
   }
 
