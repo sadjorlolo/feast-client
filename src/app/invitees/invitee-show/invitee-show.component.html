@@ -9,11 +9,11 @@
         <li>Event Description: {{oneInvite.attended_event.description}}</li>
         <!-- <li>Hosted By: {{oneInvite.attended_event.event_creator.email}}</li> -->
         <!-- <li><a routerLink="/events/edit/{{oneInvite.attended_event.id}}">Edit</a></li> -->
-        <!-- <li>
-          <form (ngSubmit)="deleteInvite(oneInvite.attended_event)">
+        <li>
+          <form (ngSubmit)="deleteInvite(oneInvite)">
           <input type="submit" value="Delete"/>
         </form>
-        </li> -->
+        </li>
     </ul>
     <hr>
   </div>

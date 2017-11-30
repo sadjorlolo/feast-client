@@ -31,6 +31,12 @@ export class EventShowComponent implements OnInit {
       })
   }
 
+  deleteInvitee(invitee, oneEvent){
+    console.log('deleteinvitee invitee is', invitee)
+    console.log('oneEvent is', oneEvent)
+    this.eventService.deleteInvitee(invitee)
+  }
+
   // saveEvent(newEvent) {
   //   this.InviteesService
   // }

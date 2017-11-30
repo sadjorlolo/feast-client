@@ -12,6 +12,9 @@
         <li *ngIf="oneEvent.event_attendees.length">Current Attendees: </li>
           <div *ngFor="let attendee of oneEvent.event_attendees">
             <li>{{attendee.email}}</li>
+            <form (ngSubmit)="deleteInvitee(attendee, oneEvent)">
+              <input type="submit" value="Uninvite" />
+            </form>
           </div>
 
 

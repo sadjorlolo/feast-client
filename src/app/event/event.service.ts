@@ -64,6 +64,13 @@ export class EventService {
     return this.http.delete(`${environment.apiOrigin}/events/${event.id}`, config);
   }
 
+  deleteInvitee(invitee) {
+    console.log('delete service invitee is', invitee)
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+    // return this.http.delete(`${environment.apiOrigin}/invitees/${event.id}`, config);
+  }
+
   constructor(private http: Http,
               public auth: AuthService) { }
 

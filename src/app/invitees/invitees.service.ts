@@ -39,4 +39,11 @@ export class InviteesService {
 
     return this.http.post(`${environment.apiOrigin}/invitees`, invitation, config);
   }
+
+  deleteInvite(invite) {
+    const config = {};
+    config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
+
+    return this.http.delete(`${environment.apiOrigin}/invitees/${invite.id}`, config);
+  }
 }

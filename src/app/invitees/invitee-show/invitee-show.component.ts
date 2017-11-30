@@ -20,6 +20,16 @@ export class InviteeShowComponent implements OnInit {
     private router: Router
   ) { }
 
+  deleteInvite(oneInvite) {
+    console.log('oneinvite is', oneInvite)
+    this.inviteesService.deleteInvite(oneInvite)
+    .subscribe(response => {
+      console.log('deleteevent response is', response.json())
+      this.router.navigate(["/invitees"]);
+
+    })
+  }
+
   ngOnInit() {
     this.route.params.forEach(param => {
       this.inviteesService.getOneInvite(param.id)

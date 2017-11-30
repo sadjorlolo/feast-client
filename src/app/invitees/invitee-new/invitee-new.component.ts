@@ -36,9 +36,13 @@ export class InviteeNewComponent implements OnInit {
     this.inviteesService.saveInvitee(invitee)
       // console.log('invitee is', invitee)
       .subscribe(response => {
-      console.log('response is', response.json().invitee.event_attendee)
-      console.log('eventshow', this.eventShow.oneEvent)
+      // console.log('response is', response.json().invitee.event_attendee)
+      // console.log('new invitee full data is', response.json().invitee)
+      // console.log('eventshow', this.eventShow.oneEvent)
+      console.log('save response is', response.json())
+      if (response.json() !== null) {
         this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
+      }
       // this.eventService.getOneEvent(this.event_id)
         // console.log('save invite', response.json())
         // console.log('invitee event id', response.json().invitee.attended_event.id)
@@ -57,13 +61,16 @@ export class InviteeNewComponent implements OnInit {
         let invitee = users.find(user => user.email == newInvitee)
         console.log('the invitation is for ', invitee)
 
-        let invitation = {
-          "invitee": {
-            "user_id": invitee.id,
-            "event_id": this.event_id
+        if (invitee !== undefined) {
+          let invitation = {
+            "invitee": {
+              "user_id": invitee.id,
+              "event_id": this.event_id
+            }
           }
+
+          this.saveInvitee(invitation)
         }
-        this.saveInvitee(invitation)
         this.newInvitee = ''
 
       })
