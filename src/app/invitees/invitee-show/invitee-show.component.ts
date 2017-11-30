@@ -36,7 +36,7 @@ export class InviteeShowComponent implements OnInit {
       .subscribe(response => {
         // console.log(response.json().invitee)
         this.oneInvite = response.json().invitee
-      })
+      }, err => {})
     })
   }
 

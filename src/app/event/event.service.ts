@@ -17,11 +17,12 @@ export class EventService {
   }
 
   getOneEvent(eventId) {
-    // console.log('get one event?')
+    console.log('get one event?')
     const config = {};
     config['headers'] = { Authorization: 'Token token=' + this.auth.getUserToken() }
-    return this.http.get(`${environment.apiOrigin}/events/${eventId}`, config)
     // console.log('getOne config is', config)
+    // console.log('what i return is', this.http.get(`${environment.apiOrigin}/events/${eventId}`, config).json())
+    return this.http.get(`${environment.apiOrigin}/events/${eventId}`, config)
   }
 
   saveEvent(newEvent) {

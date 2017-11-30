@@ -28,7 +28,7 @@ export class EventShowComponent implements OnInit {
     this.eventService.deleteEvent(event)
       .subscribe(response => {
         this.router.navigate(["/events"]);
-      })
+      }, err => {})
   }
 
   deleteInvitee(invitee, oneEvent){
@@ -43,12 +43,11 @@ export class EventShowComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach(param => {
-      // console.log('param id is', param.id)
+      console.log('param id is', param.id)
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
-        console.log(response.json())
         this.oneEvent = response.json().event
-      })
+      }, err => {})
     })
   }
 
