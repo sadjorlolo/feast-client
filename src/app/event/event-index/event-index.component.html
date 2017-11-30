@@ -1,22 +1,23 @@
 <div *ngIf="auth.user">
-  <div *ngFor="let event of allEvents">
-    <ul>
-      <li><a routerLink="/events/{{event.id}}">Id: {{event.id}}</a></li>
-      <li>Event Name : {{event.name}}</li>
-      <li>Event Date : {{event.date}}</li>
-      <li>Event Time: {{event.time}}</li>
-      <li>Event Location: {{event.location}}</li>
-      <li>Event Description: {{event.description}}</li>
-      <li>Hosted By: {{event.event_creator.email}}</li>
-      <!-- <div *ngFor="let attendee of event.event_attendees">
-        <li>{{attendee.email}}</li>
-      </div> -->
-      <li><a routerLink="/events/edit/{{event.id}}">Edit</a></li>
-    </ul>
-    <hr>
+  <div class='event' *ngFor="let event of allEvents">
+    <div class='this-event'>
+      <h2>{{event.name}}</h2>
+      <div class='event-deets'>
+        <p>Date: {{event.date}}</p>
+        <p>Time: {{event.time}}</p>
+        <p>{{event.location}}</p>
+      </div>
+    </div>
+    <a class='view-event-button' routerLink="/events/{{event.id}}">
+      View this event
+    </a>
+    <a class='edit-event-button' routerLink="/events/edit/{{event.id}}">
+      Edit this event
+    </a>
+
   </div>
 
-  <div *ngIf="!allEvents.length">
+  <div class='no-events' *ngIf="!allEvents.length">
     Looks like you don't have any events yet!
   </div>
 </div>
