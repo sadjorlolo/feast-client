@@ -1,11 +1,10 @@
-.invite-show {
-  border: 1px solid black;
-}
-
 .show-this-invite {
-  border: 1px solid blue;
-  width: 500px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 400px;
   margin: auto;
+  text-align: center;
 }
 
 .show-this-invite p, h2 {
@@ -32,8 +31,20 @@
 .delete-invite-button {
   font-size: 15px;
   width: 230px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F39B71;
+  color: #F8EDD4;
 }
 
 .invite-desc {
   white-space: pre-wrap;
+}
+
+.nonexist-invite{
+  text-align: center;
+  font-size: 18px;
+  color: #72585C;
+  font-weight: bold;
+  margin-top: 30px;
 }

@@ -10,12 +10,18 @@
   height: 20px;
   font-size: 15px;
   padding-left: 5px;
+  border-radius: 5px;
+  border: none;
 }
 
 .sign-in-button {
   width: 230px;
   height: 25px;
   font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #F39B71;
+  color: #F8EDD4;
 }
 
 .sign-in-msg {
@@ -35,6 +41,10 @@
   width: 150px;
   height: 25px;
   font-size: 15px;
+  border-radius: 5px;
+  background-color: #F39B71;
+  border: none;
+  color: #F8EDD4;
 }
 
 .sign-up {
@@ -49,12 +59,18 @@
   margin: 3px;
   padding-left: 5px;
   width: 250px;
+  border-radius: 5px;
+  border: none;
 }
 
 .sign-up-button {
-  width: 260px;
+  width: 258px;
   height: 25px;
   font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #F39B71;
+  color: #F8EDD4;
 }
 
 .change-pw {
@@ -64,6 +80,8 @@
 }
 
 .change-pw input {
+  border: none;
+  border-radius: 5px;
   width: 200px;
   height: 20px;
   font-size: 15px;
@@ -71,7 +89,12 @@
 }
 
 .change-pw-button {
+  border: none;
+  border-radius: 5px;
   width: 210px;
   height: 25px;
   font-size: 15px;
+  background-color: #F39B71;
+  color: #F8EDD4;
+
 }

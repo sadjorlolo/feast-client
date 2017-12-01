@@ -5,9 +5,10 @@
 }
 
 .flash-msg {
-  height: 40px;
-  border: 1px solid black;
+  height: 60px;
   text-align: center;
   overflow: hidden;
-  color: red;
+  font-size: 20px;
+  color: #CA4440;
+  font-weight: bold;
 }

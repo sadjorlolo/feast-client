@@ -5,7 +5,7 @@
         <h2 *ngIf="invite.attended_event.name">{{invite.attended_event.name}}</h2>
         <h2 *ngIf="!invite.attended_event.name">This event does not have a name.</h2>
 
-        <div class='event-deets'>
+        <div class='invite-deets'>
           <p *ngIf="invite.attended_event.date"> Date : {{invite.attended_event.date}}</p>
           <p *ngIf="!invite.attended_event.date"> Date: No Date Available</p>
 

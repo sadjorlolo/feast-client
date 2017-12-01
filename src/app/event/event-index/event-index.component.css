@@ -1,5 +1,4 @@
 .events-index {
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -9,16 +8,18 @@
 }
 
 .event {
-  border: 1px solid black;
   width: 400px;
   padding: 5px;
   height: 270px;
   display: inline-block;
   margin: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
 }
 
 .this-event {
-  border: 1px solid blue;
   word-wrap: break-word;
   height: 240px;
   overflow: scroll;
@@ -27,7 +28,6 @@
 .event-deets {
   overflow: scroll;
   height: 160px;
-  border: 1px solid green;
 }
 
 p {
@@ -42,9 +42,14 @@ h2 {
 .event a {
   display: inline-block;
   text-decoration: none;
-  border: 1px solid red;
   width: 190px;
   text-align: center;
   margin-top: 5px;
   margin-left: 3px;
+  background-color: #F39B71;
+  border: none;
+  border-radius: 5px;
+  color: #F8EDD4;
+  height: 25px;
+  font-size: 18px;
 }

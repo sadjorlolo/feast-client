@@ -3,12 +3,17 @@
   margin-left: 20px;
   font-size: 15px;
   margin-bottom: 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 5px;
 }
 
 .add-invitee-button {
-  border: 1px solid red;
+  background-color: #F39B71;
+  border: none;
+  color: #F8EDD4;
+  border-radius: 5px;
   height: 25px;
-  box-sizing: border-box;
   width: 100px;
   font-size: 15px;
 }

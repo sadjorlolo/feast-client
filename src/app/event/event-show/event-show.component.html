@@ -26,7 +26,7 @@
         <app-invitee-new [event_id]="oneEvent.id"></app-invitee-new>
 
         <a class='edit-event-button' routerLink="/events/edit/{{oneEvent.id}}">
-          Edit
+          Edit Event
         </a>
           <form (ngSubmit)="deleteEvent(oneEvent)">
           <button class='delete-event-button' type="submit">Delete Event</button>
@@ -34,6 +34,6 @@
     </div>
   </div>
 
-  <div *ngIf='!oneEvent'>
+  <div class='nonexist-event' *ngIf='!oneEvent'>
     Whoops, look like that event doesn't exist.
   </div>
