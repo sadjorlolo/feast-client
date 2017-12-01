@@ -1,30 +1,40 @@
 .update-event {
-  border: 1px solid black;
   margin: auto;
-  width: 500px;
+  width: 410px;
   text-align: center;
-}
-
-.update-event-form {
-  border: 1px solid green;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
 }
 
 .update-event-form input {
-  width: 300px;
+  width: 350px;
   font-size: 18px;
   margin: 2px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding-left: 5px;
 }
 
 textarea {
-  width: 300px;
+  width: 350px;
   font-size: 18px;
   resize: none;
   margin-left: 3px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding-left: 5px;
 }
 
 .update-event-button {
+  border-radius: 5px;
+  border: none;
   height: 25px;
   font-size: 15px;
-  width: 200px;
+  width: 250px;
   margin: 5px;
+  background-color: #F39B71;
+  border: none;
+  color: #F8EDD4;
+  border-radius: 5px;
 }

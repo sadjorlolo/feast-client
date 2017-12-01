@@ -1,30 +1,38 @@
 .new-event {
-  border: 1px solid black;
+  border-radius: 5px;
+  border: none;
   margin: auto;
   width: 500px;
   text-align: center;
-}
-
-.new-event-form {
-  border: 1px solid green;
+  background-color: #DADCA7;
 }
 
 .new-event-form input {
-  width: 300px;
+  width: 350px;
   font-size: 18px;
-  margin: 2px;
+  margin: 4px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 5px;
 }
 
 textarea {
-  width: 300px;
+  width: 350px;
   font-size: 18px;
   resize: none;
   margin-left: 3px;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 5px;
 }
 
 .create-event-button {
   height: 25px;
   font-size: 15px;
-  width: 200px;
+  width: 250px;
   margin: 5px;
+  background-color: #72585C;
+  border: none;
+  color: #F8EDD4;
 }

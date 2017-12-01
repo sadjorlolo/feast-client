@@ -2,8 +2,8 @@
     <div class='event-show' *ngIf='oneEvent'>
       <div class='show-this-event'>
 
-        <h2 *ngIf="oneEvent.name">{{oneEvent.name}}</h2>
-        <h2 *ngIf="!oneEvent.name">No Event Name Provided</h2>
+        <h2 class="one-event-name" *ngIf="oneEvent.name">{{oneEvent.name}}</h2>
+        <h2 class='one-event-name' *ngIf="!oneEvent.name">No Event Name Provided</h2>
 
         <p *ngIf="oneEvent.date"><span>Date:</span> {{oneEvent.date}}</p>
         <p *ngIf="!oneEvent.date"><span>Date:</span> No Date Provided</p>
