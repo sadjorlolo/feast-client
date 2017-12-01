@@ -17,10 +17,8 @@ export class EventIndexComponent implements OnInit {
               private _flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
-    // console.log('does this work?')
     this.eventService.getAllEvents()
       .subscribe(response => {
-        // console.log(response.json().events);
         this.allEvents = response.json().events;
       }, err => {
         this._flashMessagesService.show('Something went wrong. Try again.')

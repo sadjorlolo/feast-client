@@ -48,3 +48,7 @@ h2 {
   margin-top: 5px;
   margin-left: 3px;
 }
+
+.invitee-desc {
+  white-space: pre-wrap;
+}

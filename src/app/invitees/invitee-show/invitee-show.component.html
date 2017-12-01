@@ -1,7 +1,6 @@
 
     <div class='invite-show' *ngIf='oneInvite'>
       <div class='show-this-invite'>
-        <!-- <li>Id: {{oneInvite.attended_event.id}}</li> -->
         <h2 *ngIf="oneInvite.attended_event.name">{{oneInvite.attended_event.name}}</h2>
         <h2 *ngIf="!oneInvite.attended_event.name">No Name Available</h2>
 
@@ -15,10 +14,8 @@
         <p *ngIf="oneInvite.attended_event.location"> <span> Location:</span> {{oneInvite.attended_event.location}}</p>
         <p *ngIf="!oneInvite.attended_event.location"><span>  Location:</span> No Location Available</p>
 
-        <p class='invite-desc' *ngIf="oneInvite.attended_event.description"> <span> Description:</span> {{oneInvite.attended_event.description}}</p>
+        <p class='invite-desc' *ngIf="oneInvite.attended_event.description"><span>Description:</span> {{oneInvite.attended_event.description}}</p>
         <p *ngIf="!oneInvite.attended_event.description"> <span> Description:</span> No Description Provided</p>
-        <!-- <li>Hosted By: {{oneInvite.attended_event.event_creator.email}}</li> -->
-        <!-- <li><a routerLink="/events/edit/{{oneInvite.attended_event.id}}">Edit</a></li> -->
           <form (ngSubmit)="deleteInvite(oneInvite)">
             <button class="delete-invite-button" type="submit">Delete Invitation</button>
           </form>

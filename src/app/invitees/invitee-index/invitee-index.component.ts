@@ -22,7 +22,6 @@ export class InviteeIndexComponent implements OnInit {
   ngOnInit() {
     this.inviteesService.getAllInvites()
       .subscribe(response => {
-        console.log(response.json().invitees)
         this.allInvites = response.json().invitees
       }, err => {
         this._flashMessagesService.show('Something went wrong. Please try again.')

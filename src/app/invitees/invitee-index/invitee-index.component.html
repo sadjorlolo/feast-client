@@ -15,7 +15,7 @@
           <p *ngIf="invite.attended_event.location"> Location: {{invite.attended_event.location}}</p>
           <p *ngIf="!invite.attended_event.location"> Location: No Location Available</p>
 
-          <p *ngIf="invite.attended_event.description"> Description: {{invite.attended_event.description}}</p>
+          <p class='invitee-desc' *ngIf="invite.attended_event.description"> Description: {{invite.attended_event.description}}</p>
           <p *ngIf="!invite.attended_event.description"> Description: {{invite.attended_event.description}}</p>
 
         </div>

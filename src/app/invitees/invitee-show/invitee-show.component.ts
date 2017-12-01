@@ -24,11 +24,9 @@ export class InviteeShowComponent implements OnInit {
   ) { }
 
   deleteInvite(oneInvite) {
-    console.log('oneinvite is', oneInvite)
     this.inviteesService.deleteInvite(oneInvite)
     .subscribe(response => {
       this._flashMessagesService.show('Your invitation has been deleted.')
-      console.log('deleteevent response is', response.json())
       this.router.navigate(["/invitees"]);
 
     }, err => {
@@ -40,7 +38,6 @@ export class InviteeShowComponent implements OnInit {
     this.route.params.forEach(param => {
       this.inviteesService.getOneInvite(param.id)
       .subscribe(response => {
-        // console.log(response.json().invitee)
         this.oneInvite = response.json().invitee
       }, err => {
         this._flashMessagesService.show("Something went wrong. Please try again.")

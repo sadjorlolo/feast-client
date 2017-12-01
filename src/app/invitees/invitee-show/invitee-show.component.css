@@ -8,16 +8,16 @@
   margin: auto;
 }
 
-.show-this-event p, h2 {
+.show-this-invite p, h2 {
   word-wrap: break-word;
   margin: 10px;
 }
 
-.show-this-event span {
+.show-this-invite span {
   font-weight: bold;
 }
 
-.show-this-event a, form {
+.show-this-invite a, form {
   margin-top: 5px;
   text-decoration: none;
   height: 23px;

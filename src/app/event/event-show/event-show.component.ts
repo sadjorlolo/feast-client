@@ -23,11 +23,9 @@ export class EventShowComponent implements OnInit {
     public auth: AuthService,
     private router: Router,
     private _flashMessagesService: FlashMessagesService
-    // private inviteesService: InviteesService
   ) { }
 
   deleteEvent(event) {
-    // console.log('show ts event is', event)
     this.eventService.deleteEvent(event)
       .subscribe(response => {
         this._flashMessagesService.show('Event deleted!')
@@ -38,18 +36,11 @@ export class EventShowComponent implements OnInit {
   }
 
   deleteInvitee(invitee, oneEvent){
-    console.log('deleteinvitee invitee is', invitee)
-    console.log('oneEvent is', oneEvent)
     this.eventService.deleteInvitee(invitee)
   }
 
-  // saveEvent(newEvent) {
-  //   this.InviteesService
-  // }
-
   ngOnInit() {
     this.route.params.forEach(param => {
-      console.log('param id is', param.id)
       this.eventService.getOneEvent(param.id)
       .subscribe(response => {
         this.oneEvent = response.json().event

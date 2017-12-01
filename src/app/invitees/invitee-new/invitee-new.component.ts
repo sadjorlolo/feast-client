@@ -34,39 +34,26 @@ export class InviteeNewComponent implements OnInit {
 
   saveInvitee(invitee) {
     this.inviteesService.saveInvitee(invitee)
-      // console.log('invitee is', invitee)
       .subscribe(response => {
-      // console.log('response is', response.json().invitee.event_attendee)
-      // console.log('new invitee full data is', response.json().invitee)
-      // console.log('eventshow', this.eventShow.oneEvent)
-      console.log('save response is', response.json())
-      if (response.json() !== null) {
-        this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
-      } else {
-        this._flashMessagesService.show('The user you selected is already an attendee.')
-      }
-      // this.eventService.getOneEvent(this.event_id)
-        // console.log('save invite', response.json())
-        // console.log('invitee event id', response.json().invitee.attended_event.id)
+        if (response.json() !== null) {
+          this.eventShow.oneEvent.event_attendees.push(response.json().invitee.event_attendee)
+        } else {
+          this._flashMessagesService.show('The user you selected is already an attendee.')
+        }
+
       }, err => {
         this._flashMessagesService.show('Something went wrong. Please try again.')
-    })
-      console.log('router nav invitee is', invitee)
-      // this.router.navigate(["/events/" + invitee.invitee.event_id])
-  }
+      })
+    }
 
   getInvitee(newInvitee) {
     if (!newInvitee) {
       this._flashMessagesService.show('Attendee Email is required!')
     } else {
-      console.log('newInvitee is', newInvitee)
-      console.log('event_id is', this.event_id)
       this.inviteesService.getInvitee()
         .subscribe(response => {
-          console.log('all users response is', response.json().users)
           let users = response.json().users
           let invitee = users.find(user => user.email == newInvitee)
-          console.log('the invitation is for ', invitee)
 
           if (invitee !== undefined) {
             let invitation = {
